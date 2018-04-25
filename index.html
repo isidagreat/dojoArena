@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>StreetFighterz</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".arenaArea select").hide();
+			$("#characterDisplay img").hide();
+
+			$(".arenaArea button").hover(function(){
+				var temp = $(this).attr("data-alt-src");
+				$(".background").css("background-image","url("+temp+")");
+			});
+			$(".arenaArea button").click(function(){
+				$(".arenaArea button").hide();
+				$(".arenaArea h1").text("Select Character");
+				$(".arenaArea select").show();
+			})
+
+			$("arenaArea option").click(function(){
+				var temp
+			});
+
+
+			
+		});
+	</script>
+</head>
+<body>
+	<!-- This div conatins the wrapper that encapsulates everthing -->
+	<div id="wrapper">
+		<!-- Contains the background picture -->
+		<div class="background">
+			<!-- This holds the game selector -->
+			<div class="arenaArea">
+				<h1>Select Arena</h1>
+
+				<button data-alt-src="dojo_arena_photos/beach.jpg">beach</button>
+				<button data-alt-src="dojo_arena_photos/earth.jpg">planet</button>
+				<button data-alt-src="dojo_arena_photos/dojo.jpg">dojo</button>
+				<button data-alt-src="dojo_arena_photos/forest.jpg">forest</button>
+				<button data-alt-src="dojo_arena_photos/matrix.jpg">matrix</button>
+				<button data-alt-src="dojo_arena_photos/snow.jpg">snow</button>
+
+				<select id="leftCharacterSelect">
+					<option>Select Ninja</option>
+					<option  value="donny" data-alt-src="dojo_arena_photos/donny.png">Donny</option>
+					<option value="Leo" data-alt-src="dojo_arena_photos/leo.png">Leo</option>
+					<option  value ="raphael" data-alt-src="dojo_arena_photos/raphael.png">Raphael</option>
+					<option value="mikey" data-alt-src="dojo_arena_photos/mikey.png">Mikey</option>
+				</select>
+				<select id="rightCharacterSelect">
+					<option >Select Ninja</option>
+					<option  value="donny" data-alt-src="dojo_arena_photos/donny.png">Donny</option>
+					<option value="Leo" data-alt-src="dojo_arena_photos/leo.png">Leo</option>
+					<option  value ="raphael" data-alt-src="dojo_arena_photos/raphael.png">Raphael</option>
+					<option value="mikey" data-alt-src="dojo_arena_photos/mikey.png">Mikey</option>
+				</select>
+				</select>
+			</div>
+			<div id="characterDisplay">
+				<div class="leftCharacter">
+				<img src="dojo_arena_photos/donny.png">
+				</div>
+				<div class="rightCharacter">
+				<img src="dojo_arena_photos/donny.png">
+				</div>
+			</div>
+		
+		</div>
+
+		
+	</div>
+
+</body>
+</html>
