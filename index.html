@@ -8,7 +8,8 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$(".arenaArea select").hide();
-			$("#characterDisplay img").hide();
+			$(".leftCharacter img").hide();
+			$(".rightCharacter img").hide();
 
 			$(".arenaArea button").hover(function(){
 				var temp = $(this).attr("data-alt-src");
@@ -20,8 +21,19 @@
 				$(".arenaArea select").show();
 			})
 
-			$("arenaArea option").click(function(){
-				var temp
+			$("#leftCharacterSelect").change(function(){
+				var temp1 = String($("option:selected",this).attr("data-alt-src"));
+				$(".leftCharacter img").attr("src", temp1);
+				$(".leftCharacter img").show();
+				console.log(temp1);
+				
+			});
+			$("#rightCharacterSelect").change(function(){
+				var temp1 = String($("option:selected",this).attr("data-alt-src"));
+				$(".rightCharacter img").attr("src", temp1);
+				$(".rightCharacter img").show();
+				console.log(temp1);
+				
 			});
 
 
